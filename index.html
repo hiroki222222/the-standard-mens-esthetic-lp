@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>THE STANDARD | メンズエステティック・クオリティ</title>
+  <meta name="description" content="洗練されたプライベート空間で、日常の疲れを解きほぐすメンズエステサロン。完全個室・厳選セラピスト・オーダーメイド施術。" />
+  <meta name="author" content="THE STANDARD" />
+  <meta property="og:title" content="THE STANDARD | メンズエステティック" />
+  <meta property="og:description" content="洗練されたプライベート空間で、本来の輝きを取り戻すメンズエステサロン。" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #faf8f5;
+      --bg-tertiary: #f5f0eb;
+      --text-main: #1a1a1a;
+      --text-muted: #7a7067;
+      --accent: #c5a059;
+      --accent-dark: #a38445;
+      --accent-light: #e8d5b0;
+      --border: rgba(0, 0, 0, 0.08);
+      --glass: rgba(255, 255, 255, 0.85);
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 2rem;
+      --space-lg: 4rem;
+      --space-xl: 8rem;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-base: 0.6s var(--ease-out-expo);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-primary);
+      line-height: 1.7;
+      overflow-x: hidden;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .text-inline { display: inline-block; }
+
+    /* Container */
+    .lp-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .lp-section {
+      padding: var(--space-xl) 0;
+    }
+
+    /* Header */
+    .lp-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      height: 72px;
+      display: flex;
+      align-items: center;
+    }
+
+    .lp-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .lp-logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    .lp-logo-sub {
+      font-size: 0.625rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      display: block;
+      margin-top: -2px;
+    }
+
+    .lp-nav-links {
+      display: flex;
+      gap: var(--space-md);
+      list-style: none;
+    }
+
+    .lp-nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: color 0.3s ease;
+    }
+
+    .lp-nav-links a:hover { color: var(--accent); }
+
+    .lp-nav-links .nav-jp {
+      display: block;
+      font-size: 0.625rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* Hero */
+    .lp-hero {
+      height: 100svh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: #0a0a0a;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .lp-hero-image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+
+    .lp-hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.6) 50%, rgba(10,10,10,0.2) 100%);
+    }
+
+    .lp-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .lp-hero-subtitle {
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      letter-spacing: 0.2em;
+      margin-bottom: var(--space-sm);
+    }
+
+    .lp-hero-title {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      white-space: nowrap;
+      margin-bottom: var(--space-md);
+      font-weight: 700;
+    }
+
+    .lp-hero-desc {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .lp-hero-stats {
+      display: flex;
+      gap: var(--space-lg);
+      margin-top: var(--space-lg);
+    }
+
+    .lp-stat-label {
+      display: block;
+      font-size: 0.6875rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .lp-stat-value {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .lp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      padding: 1rem 2.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      transition: background 0.3s ease, transform 0.3s ease;
+      margin-top: var(--space-md);
+      border: none;
+      cursor: pointer;
+    }
+
+    .lp-btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    .lp-btn-outline {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .lp-btn-outline:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* Section header */
+    .lp-section-header {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+    }
+
+    .lp-section-subtitle {
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 0.8125rem;
+      letter-spacing: 0.2em;
+      margin-bottom: var(--space-xs);
+    }
+
+    .lp-section-title {
+      font-size: 2rem;
+    }
+
+    .lp-section-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+      margin: var(--space-sm) auto 0;
+    }
+
+    /* About */
+    .lp-about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: var(--space-lg);
+      align-items: center;
+    }
+
+    .lp-about-image {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .lp-about-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .lp-about-text p {
+      color: var(--text-muted);
+      margin-bottom: var(--space-sm);
+      line-height: 1.8;
+    }
+
+    /* Services grid */
+    .lp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+    }
+
+    .lp-card {
+      background: var(--bg-primary);
+      border-radius: 8px;
+      padding: var(--space-md);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--border);
+    }
+
+    .lp-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    .lp-card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--bg-tertiary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-sm);
+      color: var(--accent);
+    }
+
+    .lp-card-title {
+      font-size: 1.125rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .lp-card p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      line-height: 1.7;
+    }
+
+    /* Why choose us */
+    .lp-why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+    }
+
+    .lp-why-card {
+      text-align: center;
+      padding: var(--space-md);
+    }
+
+    .lp-why-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent-light);
+      line-height: 1;
+      margin-bottom: var(--space-sm);
+    }
+
+    .lp-why-card h3 {
+      font-size: 1.125rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .lp-why-card p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      line-height: 1.7;
+    }
+
+    /* Process */
+    .lp-process-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-md);
+      counter-reset: process;
+    }
+
+    .lp-process-item {
+      position: relative;
+      padding-top: var(--space-lg);
+    }
+
+    .lp-process-item::before {
+      counter-increment: process;
+      content: "0" counter(process);
+      font-family: 'Inter', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--border);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .lp-process-item h3 {
+      font-size: 1.125rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .lp-process-item p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      line-height: 1.7;
+    }
+
+    /* CTA */
+    .lp-cta {
+      background: var(--text-main);
+      color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      padding: var(--space-lg) var(--space-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lp-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(197,160,89,0.1) 0%, transparent 50%);
+    }
+
+    .lp-cta * { position: relative; z-index: 1; }
+
+    .lp-cta p {
+      color: rgba(255,255,255,0.7);
+      margin-top: var(--space-sm);
+    }
+
+    /* Company info */
+    .lp-info-table {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .lp-info-row {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-sm) 0;
+    }
+
+    .lp-info-label {
+      width: 140px;
+      flex-shrink: 0;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .lp-info-value {
+      font-size: 0.9375rem;
+    }
+
+    /* Contact */
+    .lp-contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-md);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .lp-contact-card {
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      padding: var(--space-md);
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease;
+    }
+
+    .lp-contact-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .lp-contact-card h3 {
+      font-size: 1rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .lp-contact-card p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .lp-contact-tel {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Footer */
+    .lp-footer {
+      background: var(--bg-secondary);
+      padding: var(--space-lg) 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .lp-footer-copy {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: var(--space-sm);
+    }
+
+    .lp-bg-secondary {
+      background: var(--bg-secondary);
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .lp-grid, .lp-why-grid, .lp-process-list { grid-template-columns: repeat(2, 1fr); }
+      .lp-hero-title { white-space: normal; }
+      .lp-about-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .lp-nav-links { display: none; }
+      .lp-hero-image { width: 100%; opacity: 0.35; }
+      .lp-about-grid { grid-template-columns: 1fr; }
+      .lp-contact-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 390px) {
+      :root {
+        --space-lg: 3rem;
+        --space-xl: 5rem;
+      }
+      .lp-nav-links { display: none; }
+      .lp-hero-image { width: 100%; opacity: 0.3; }
+      .lp-grid, .lp-why-grid, .lp-process-list { grid-template-columns: 1fr; }
+      .lp-hero-stats { flex-direction: column; gap: var(--space-sm); }
+      .lp-hero-title { font-size: 2.25rem; }
+      .lp-contact-grid { grid-template-columns: 1fr; }
+      .lp-info-row { flex-direction: column; gap: 4px; }
+      .lp-info-label { width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="lp-header">
+    <div class="lp-container">
+      <nav class="lp-nav">
+        <div>
+          <div class="lp-logo">THE STANDARD</div>
+          <span class="lp-logo-sub">メンズエステティック</span>
+        </div>
+        <ul class="lp-nav-links">
+          <li><a href="#about">ABOUT<span class="nav-jp">コンセプト</span></a></li>
+          <li><a href="#services">SERVICES<span class="nav-jp">メニュー</span></a></li>
+          <li><a href="#why">WHY US<span class="nav-jp">選ばれる理由</span></a></li>
+          <li><a href="#process">PROCESS<span class="nav-jp">ご利用の流れ</span></a></li>
+          <li><a href="#contact">CONTACT<span class="nav-jp">ご予約</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="lp-hero">
+      <img src="images/hero-spa.jpg" alt="高級メンズエステ施術室" class="lp-hero-image" />
+      <div class="lp-hero-overlay"></div>
+      <div class="lp-container">
+        <div class="lp-hero-content reveal">
+          <p class="lp-hero-subtitle">Men's Aesthetic Salon</p>
+          <h1 class="lp-hero-title">洗練を、スタンダードに。</h1>
+          <p class="lp-hero-desc">
+            <span class="text-inline">日常の疲れを解きほぐし、</span>
+            <span class="text-inline">本来の輝きを取り戻すプライベート空間。</span>
+          </p>
+          <div class="lp-hero-stats">
+            <div>
+              <span class="lp-stat-label">TOTAL CASES</span>
+              <div class="lp-stat-value">12,400+</div>
+            </div>
+            <div>
+              <span class="lp-stat-label">SATISFACTION</span>
+              <div class="lp-stat-value">98.2%</div>
+            </div>
+            <div>
+              <span class="lp-stat-label">REPEAT RATE</span>
+              <div class="lp-stat-value">85.0%</div>
+            </div>
+          </div>
+          <a href="#contact" class="lp-btn">初回カウンセリング予約</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="lp-section">
+      <div class="lp-container">
+        <div class="lp-about-grid reveal">
+          <div class="lp-about-image">
+            <img src="images/about-spa.jpg" alt="サロン内装" />
+          </div>
+          <div class="lp-about-text">
+            <p class="lp-section-subtitle" style="text-align:left;">About Us</p>
+            <h2 class="lp-section-title" style="text-align:left;margin-bottom:var(--space-md);">本質的な癒しを追求する。</h2>
+            <p>
+              <span class="text-inline">私たちは単なるリラクゼーションの提供者ではありません。</span>
+              <span class="text-inline">心身の疲れを根本から解きほぐし、深い安らぎと活力を与える。</span>
+            </p>
+            <p>
+              <span class="text-inline">厳選されたセラピストによる丁寧なアロマオイルトリートメントで、</span>
+              <span class="text-inline">一人ひとりの好みに合わせたオーダーメイドの施術を提供いたします。</span>
+            </p>
+            <p>
+              <span class="text-inline">プライバシーに配慮した完全個室で、</span>
+              <span class="text-inline">日常を忘れる特別な休息をお楽しみください。</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="lp-section lp-bg-secondary">
+      <div class="lp-container">
+        <div class="lp-section-header reveal">
+          <p class="lp-section-subtitle">Our Services</p>
+          <h2 class="lp-section-title">メニュー・プログラム</h2>
+          <div class="lp-section-divider"></div>
+        </div>
+        <div class="lp-grid">
+          <div class="lp-card reveal reveal-delay-1">
+            <div class="lp-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 10 10H12V2z"/>
+              </svg>
+            </div>
+            <h3 class="lp-card-title">アロマトリートメント</h3>
+            <p>厳選されたエッセンシャルオイルを使用した全身トリートメント。心身の緊張をほぐし、深いリラクゼーションへ導きます。</p>
+          </div>
+          <div class="lp-card reveal reveal-delay-2">
+            <div class="lp-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <h3 class="lp-card-title">ボディケア</h3>
+            <p>熟練のハンドテクニックによる筋肉への的確なアプローチ。デスクワークや運動不足による肩こり・腰痛を改善します。</p>
+          </div>
+          <div class="lp-card reveal reveal-delay-3">
+            <div class="lp-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3 class="lp-card-title">フェイシャルケア</h3>
+            <p>毛穴洗浄からエイジングケアまで、第一印象を決定づける肌質を根本から改善。ビジネスシーンで差をつけます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why" class="lp-section">
+      <div class="lp-container">
+        <div class="lp-section-header reveal">
+          <p class="lp-section-subtitle">Why Choose Us</p>
+          <h2 class="lp-section-title">選ばれる理由</h2>
+          <div class="lp-section-divider"></div>
+        </div>
+        <div class="lp-why-grid">
+          <div class="lp-why-card reveal reveal-delay-1">
+            <div class="lp-why-number">01</div>
+            <h3>完全個室のプライベート空間</h3>
+            <p>他のお客様と顔を合わせることなく、リラックスして施術を受けていただけます。</p>
+          </div>
+          <div class="lp-why-card reveal reveal-delay-2">
+            <div class="lp-why-number">02</div>
+            <h3>厳選されたセラピスト</h3>
+            <p>高い技術と接客力を兼ね備えたセラピストのみが在籍。丁寧なヒアリングで最適な施術をご提案します。</p>
+          </div>
+          <div class="lp-why-card reveal reveal-delay-3">
+            <div class="lp-why-number">03</div>
+            <h3>オーダーメイドプラン</h3>
+            <p>お客様の体調や気分に合わせた施術を、セラピストが一人ひとりに合わせて繊細にアレンジいたします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="lp-section lp-bg-secondary">
+      <div class="lp-container">
+        <div class="lp-section-header reveal">
+          <p class="lp-section-subtitle">Process</p>
+          <h2 class="lp-section-title">ご利用の流れ</h2>
+          <div class="lp-section-divider"></div>
+        </div>
+        <div class="lp-process-list">
+          <div class="lp-process-item reveal">
+            <h3>ご予約・受付</h3>
+            <p>WEB・お電話・LINEにてご予約を承ります。当日予約も歓迎です。</p>
+          </div>
+          <div class="lp-process-item reveal reveal-delay-1">
+            <h3>カウンセリング</h3>
+            <p>お悩みやご要望を丁寧にヒアリングし、最適なメニューをご提案します。</p>
+          </div>
+          <div class="lp-process-item reveal reveal-delay-2">
+            <h3>施術・トリートメント</h3>
+            <p>完全個室でセラピストによる丁寧な施術をお楽しみください。</p>
+          </div>
+          <div class="lp-process-item reveal reveal-delay-3">
+            <h3>アフターケア</h3>
+            <p>施術後のお体の状態を確認し、日常のケア方法についてアドバイスします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="lp-section">
+      <div class="lp-container reveal">
+        <div class="lp-cta">
+          <h2 class="lp-section-title" style="color:#fff;">体験コース実施中</h2>
+          <p>
+            <span class="text-inline">まずは初回限定の特別プランで、</span>
+            <span class="text-inline">私たちのクオリティをご体感ください。</span>
+          </p>
+          <a href="#contact" class="lp-btn">今すぐ予約する</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company -->
+    <section id="company" class="lp-section lp-bg-secondary">
+      <div class="lp-container">
+        <div class="lp-section-header reveal">
+          <p class="lp-section-subtitle">Company</p>
+          <h2 class="lp-section-title">店舗情報</h2>
+          <div class="lp-section-divider"></div>
+        </div>
+        <div class="lp-info-table reveal">
+          <div class="lp-info-row">
+            <div class="lp-info-label">サロン名</div>
+            <div class="lp-info-value">THE STANDARD Men's Aesthetic</div>
+          </div>
+          <div class="lp-info-row">
+            <div class="lp-info-label">所在地</div>
+            <div class="lp-info-value">東京都港区南青山 5-XX-XX</div>
+          </div>
+          <div class="lp-info-row">
+            <div class="lp-info-label">営業時間</div>
+            <div class="lp-info-value">12:00 - Last（最終受付 24:00）</div>
+          </div>
+          <div class="lp-info-row">
+            <div class="lp-info-label">定休日</div>
+            <div class="lp-info-value">年中無休</div>
+          </div>
+          <div class="lp-info-row">
+            <div class="lp-info-label">アクセス</div>
+            <div class="lp-info-value">表参道駅 B1出口より徒歩3分</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="lp-section">
+      <div class="lp-container">
+        <div class="lp-section-header reveal">
+          <p class="lp-section-subtitle">Contact</p>
+          <h2 class="lp-section-title">ご予約・お問い合わせ</h2>
+          <div class="lp-section-divider"></div>
+        </div>
+        <div class="lp-contact-grid reveal">
+          <div class="lp-contact-card">
+            <h3>お電話でのご予約</h3>
+            <p>お気軽にお問い合わせください</p>
+            <a href="tel:08012345678" class="lp-contact-tel">080-1234-5678</a>
+            <p style="margin-top:var(--space-xs);font-size:0.75rem;">受付時間 12:00〜24:00</p>
+          </div>
+          <div class="lp-contact-card">
+            <h3>WEB予約</h3>
+            <p>24時間いつでもご予約可能です</p>
+            <a href="#" class="lp-btn" style="margin-top:0;">WEB予約はこちら</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="lp-footer">
+    <div class="lp-container">
+      <div class="lp-logo">THE STANDARD</div>
+      <span class="lp-logo-sub">Men's Aesthetic Salon</span>
+      <p class="lp-footer-copy">&copy; 2025 THE STANDARD Men's Aesthetic. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for reveal animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 72,
+              behavior: 'smooth',
+            });
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
